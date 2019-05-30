@@ -30,3 +30,18 @@ class Animation {
     });
   };
 }
+
+class Main {
+  static click = () => {
+    const sound = UI.dom().sound;
+    sound.forEach(element => {
+      [...element.children].map((item, index) => {
+        item.addEventListener("click", function() {
+          this.children[0].currentTime = 0;
+          this.children[0].play();
+          Animation.animate(index);
+        });
+      });
+    });
+  };
+}
