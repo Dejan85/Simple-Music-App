@@ -45,3 +45,5 @@ class Main {
     });
   };
 }
+
+Main.click();
